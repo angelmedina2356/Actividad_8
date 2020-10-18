@@ -1,177 +1,159 @@
 
 package actividad.pkg8;
 
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 public class Deck {
 
-    public void deck(){
+    List<Card> cartas;
+    Scanner input = new Scanner(System.in);
+    public void crearBaraja(String[]palo,String[] valores){ 
         
-            Card C1 = new Card("Trébol", "Negro", "Ace");
-            Card C2 = new Card("Trébol", "Negro", "2");
-            Card C3 = new Card("Trébol", "Negro", "3");
-            Card C4 = new Card("Trébol", "Negro", "4");
-            Card C5 = new Card("Trébol", "Negro", "5");
-            Card C6 = new Card("Trébol", "Negro", "6");
-            Card C7 = new Card("Trébol", "Negro", "7");
-            Card C8 = new Card("Trébol", "Negro", "8");
-            Card C9 = new Card("Trébol", "Negro", "9");
-            Card C10 = new Card("Trébol", "Negro", "10");
-            Card CJ = new Card("Trébol", "Negro", "Jack");
-            Card CQ = new Card("Trébol", "Negro", "Queen");
-            Card CK = new Card("Trébol", "Negro", "King");
-
-            Card HA = new Card("Corazon", "rojo", "Ace");
-            Card H2 = new Card("Corazon", "rojo", "2");
-            Card H3 = new Card("Corazon", "rojo", "3");
-            Card H4 = new Card("Corazon", "rojo", "4");
-            Card H5 = new Card("Corazon", "rojo", "5");
-            Card H6 = new Card("Corazon", "rojo", "6");
-            Card H7 = new Card("Corazon", "rojo", "7");
-            Card H8 = new Card("Corazon", "rojo", "8");
-            Card H9 = new Card("Corazon", "rojo", "9");
-            Card H10 = new Card("Corazon", "rojo", "10");
-            Card HJ = new Card("Corazon", "rojo", "Jack");
-            Card HQ = new Card("Corazon", "rojo", "Queen");
-            Card HK = new Card("Corazon", "rojo", "King");
-
-            Card PA = new Card("Picas", "negro", "Ace");
-            Card P2 = new Card("Picas", "negro", "2");
-            Card P3 = new Card("Picas", "negro", "3");
-            Card P4 = new Card("Picas", "negro", "4");
-            Card P5 = new Card("Picas", "negro", "5");
-            Card P6 = new Card("Picas", "negro", "6");
-            Card P7 = new Card("Picas", "negro", "7");
-            Card P8 = new Card("Picas", "negro", "8");
-            Card P9 = new Card("Picas", "negro", "9");
-            Card P10 = new Card("Picas", "negro", "10");
-            Card PJ = new Card("Picas", "negro", "Jack");
-            Card PQ = new Card("Picas", "negro", "Queen");
-            Card PK = new Card("Picas", "negro", "King");
-
-            Card DA = new Card("Diamantes", "rojo", "Ace");
-            Card D2 = new Card("Diamantes", "rojo", "2");
-            Card D3 = new Card("Diamantes", "rojo", "3");
-            Card D4 = new Card("Diamantes", "rojo", "4");
-            Card D5 = new Card("Diamantes", "rojo", "5");
-            Card D6 = new Card("Diamantes", "rojo", "6");
-            Card D7 = new Card("Diamantes", "rojo", "7");
-            Card D8 = new Card("Diamantes", "rojo", "8");
-            Card D9 = new Card("Diamantes", "rojo", "9");
-            Card D10 = new Card("Diamantes", "rojo", "10");
-            Card DJ = new Card("Diamantes", "rojo", "Jack");
-            Card DQ = new Card("Diamantes", "rojo", "Queen");
-            Card DK = new Card("Diamantes", "rojo", "King");
-
-
-            LinkedList<Card> cartas = new LinkedList<>();
-
-            cartas.add(C1);
-            cartas.add(C2);
-            cartas.add(C3);
-            cartas.add(C4);
-            cartas.add(C5);
-            cartas.add(C6);
-            cartas.add(C7);
-            cartas.add(C8);
-            cartas.add(C9);
-            cartas.add(C10);
-            cartas.add(CJ);
-            cartas.add(CQ);
-            cartas.add(CK);
-
-                    cartas.add(HA);
-                    cartas.add(H2);
-                    cartas.add(H3);
-                    cartas.add(H4);
-                    cartas.add(H5);
-                    cartas.add(H6);
-                    cartas.add(H7);
-                    cartas.add(H8);
-                    cartas.add(H9);
-                    cartas.add(H10);
-                    cartas.add(HJ);
-                    cartas.add(HQ);
-                    cartas.add(HK);
-
-                            cartas.add(PA);
-                            cartas.add(P2);
-                            cartas.add(P3);
-                            cartas.add(P4);
-                            cartas.add(P5);
-                            cartas.add(P6);
-                            cartas.add(P7);
-                            cartas.add(P8);
-                            cartas.add(P9);
-                            cartas.add(P10);
-                            cartas.add(PJ);
-                            cartas.add(PQ);
-                            cartas.add(PK);
-
-                                    cartas.add(DA);
-                                    cartas.add(D2);
-                                    cartas.add(D3);
-                                    cartas.add(D4);
-                                    cartas.add(D5);
-                                    cartas.add(D6);
-                                    cartas.add(D7);
-                                    cartas.add(D8);
-                                    cartas.add(D9);
-                                    cartas.add(D10);
-                                    cartas.add(DJ);
-                                    cartas.add(DQ);
-                                    cartas.add(DK);
-
-            System.out.println();
-            System.out.println("Hay: " + cartas.size());
-
-            Random numsaleatorio = new Random();
-            int r = numsaleatorio.nextInt(cartas.size());
-
-            System.out.println("Se mezclo el Deck");
-            System.out.println("La carta numero uno es: " + cartas.get(r));
-            cartas.remove(r);
-            System.out.println("Solo quedan: " + cartas.size());
-
-            Random numaleatorio = new Random();
-            int n = numaleatorio.nextInt(cartas.size());
-
-            //System.out.println(n);
-            System.out.println("La carta es: " + cartas.get(n));
-
-            cartas.remove(n);
-
-            System.out.println("Solo quedan: " + cartas.size());
-
-            Random numaleatorio1 = new Random();
-            int j = numaleatorio1.nextInt(cartas.size());
-
-            Random numaleatorio2 = new Random();
-            int k = numaleatorio2.nextInt(cartas.size());
-
-            Random numaleatorio3 = new Random();
-            int l = numaleatorio3.nextInt(cartas.size());
-
-            Random numaleatorio4 = new Random();
-            int o = numaleatorio4.nextInt(cartas.size());
-
-            Random numaleatorio5 = new Random();
-            int p = numaleatorio5.nextInt(cartas.size());
-
-            System.out.println("Shuffle de cartas");
-            System.out.println(cartas.get(j));
-            cartas.remove(j);
-            System.out.println(cartas.get(k));
-            cartas.remove(k);
-            System.out.println(cartas.get(l));
-            cartas.remove(l);
-            System.out.println(cartas.get(o));
-            cartas.remove(o);
-            System.out.println(cartas.get(p));
-            cartas.remove(p);
-
-            System.out.println("Solo quenda: " + cartas.size());
+        cartas = new ArrayList<>();
         
+        for( int i = 0; i<palo.length; i++){
+        for(int j=0;j<valores.length;j++){
+        Card carta =new Card ();
+        if (palo[i].equals("corazon") || palo[i].equals("diamante")){
+            carta.color="rojo";
+        }else{
+            carta.color="Negro";
+        }
+        carta.palo=palo[i];
+        carta.valor=valores[j];
+        cartas.add(carta);
+        }
+        }
+            
+        System.out.println("El tamaño de la baraja son " + cartas.size());
+
+
+
+}
+    public void mezclar(){
+        Collections.shuffle(cartas);
+        System.out.println("se mezclo el deck");
     }
+    public void head(){
+    Card carta =cartas.get(0);
+    System.out.println("tu carta es color:" +carta.color);
+    System.out.println("pertenece al palo: "+carta.palo);
+    System.out.println("y tiene un valor de:"+carta.valor);
+    cartas.remove(0);
+    System.out.println("tamaño"+cartas.size());
+    }
+    
+    public void pick(){
+    Card carta=cartas.get(5);
+     System.out.println("tu carta es color:" +carta.color);
+    System.out.println("pertenece al palo: "+carta.palo);
+    System.out.println("y tiene un valor de:"+carta.valor);
+    cartas.remove(5);
+    Collections.shuffle(cartas);
+    System.out.println("tamaño"+cartas.size());
+    }
+    
+    
+    public void hand(){
+    
+        {Card carta=cartas.get(8);
+    System.out.println ("Carta numero 4");
+    System.out.println("tu carta es color:" +carta.color);
+    System.out.println("pertenece al palo: "+carta.palo);
+    System.out.println("y tiene un valor de:"+carta.valor);
+    cartas.remove(8);
+    Collections.shuffle(cartas);
+    System.out.println("tamaño"+cartas.size());}
+    
+        {Card carta=cartas.get(6);
+    System.out.println ("Carta numero 4");
+    System.out.println("tu carta es color:" +carta.color);
+    System.out.println("pertenece al palo: "+carta.palo);
+    System.out.println("y tiene un valor de:"+carta.valor);
+    cartas.remove(6);
+    Collections.shuffle(cartas);
+    System.out.println("tamaño"+cartas.size());}
+    
+    {Card carta=cartas.get(10);
+    System.out.println ("Carta numero 3");
+    System.out.println("tu carta es color:" +carta.color);
+    System.out.println("pertenece al palo: "+carta.palo);
+    System.out.println("y tiene un valor de:"+carta.valor);
+    cartas.remove(10);
+    Collections.shuffle(cartas);
+    System.out.println("tamaño"+cartas.size());}
+    
+    {Card carta=cartas.get(15);
+    System.out.println ("Carta numero 2");
+    System.out.println("tu carta es color:" +carta.color);
+    System.out.println("pertenece al palo: "+carta.palo);
+    System.out.println("y tiene un valor de:"+carta.valor);
+    cartas.remove(15);
+    Collections.shuffle(cartas);
+    System.out.println("tamaño"+cartas.size());}
+    
+    {Card carta=cartas.get(12);
+    System.out.println ("Carta numero 1");
+    System.out.println("tu carta es color:" +carta.color);
+    System.out.println("pertenece al palo: "+carta.palo);
+    System.out.println("y tiene un valor de:"+carta.valor);
+    cartas.remove(12);
+    Collections.shuffle(cartas);
+    System.out.println("tamaño"+cartas.size());}
+   
+   
+    }
+    
+    public void showMenu(){
+        boolean salir=true;
+        while (salir){
+            int opcion;
+            System.out.println("");
+            System.out.println("Bienvenido a poker!");
+            System.out.println("");
+            System.out.println("Selecciona una opcion:");
+            System.out.println("");
+            System.out.println("1 Mezclar Deck");
+            System.out.println("");
+            System.out.println("2 Saca la carta");
+            System.out.println("");
+            System.out.println("3 Carta al azar");
+            System.out.println("");
+            System.out.println("4 Generar mano de 5 cartas");
+            System.out.println("");
+            System.out.println("0 Salir");
+            System.out.println("");
+            opcion=input.nextInt();
+            switch (opcion){
+                case 1:
+                    mezclar();
+                    break;
+                case 2:
+                    head();
+                    break;
+                case 3:
+                    pick();
+                    break;
+                case 4:
+                    hand();
+                    break;
+                  
+                                  
+                default:
+                    System.out.println("");
+                    System.out.println("Opción no válida");
+                    System.out.println("");
+                    break;
+                    
+                case 0:
+                    System.out.println("El juego a finalizado");
+                    break;
+                    
+            }
+
+        
+             
+        }
+               
+    } 
 }
