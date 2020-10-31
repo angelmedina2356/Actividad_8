@@ -1,4 +1,5 @@
 package actividad.pkg8;
+import java.lang.*;
 
 public class Card {
 

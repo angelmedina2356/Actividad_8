@@ -2,6 +2,7 @@
 package actividad.pkg8;
 
 import java.util.*;
+import java.lang.*;
 
 public class Deck {
 
@@ -104,10 +105,13 @@ public class Deck {
    
     }
     
+    
+    
+    
     public void showMenu(){
         boolean salir=true;
         while (salir){
-            int opcion;
+           String opcion;
             System.out.println("");
             System.out.println("Bienvenido a poker!");
             System.out.println("");
@@ -123,36 +127,41 @@ public class Deck {
             System.out.println("");
             System.out.println("0 Salir");
             System.out.println("");
-            opcion=input.nextInt();
+            opcion = input.nextLine();
             switch (opcion){
-                case 1:
+                case "1":
                     mezclar();
                     break;
-                case 2:
+                case "2":
                     head();
                     break;
-                case 3:
+                case "3":
                     pick();
                     break;
-                case 4:
+                case "4":
                     hand();
-                    break;
-                  
-                                  
+                    break;              
                 default:
                     System.out.println("");
                     System.out.println("Opción no válida");
                     System.out.println("");
-                    break;
-                    
-                case 0:
+                    break;                    
+                case "0":
                     System.out.println("El juego a finalizado");
                     break;
                     
             }
 
+        try{ 
+        if(cartas.size() <= 0){
+            throw new Exception("Se han agotado las cartas");
+            }
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+           break;
+        }    
+  
         
-             
         }
                
     } 

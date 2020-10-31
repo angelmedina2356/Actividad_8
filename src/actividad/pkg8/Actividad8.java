@@ -1,6 +1,7 @@
 
 package actividad.pkg8;
 import java.util.*;
+import java.lang.*;
 public class Actividad8 {
   
     public static void main(String[] args) {
